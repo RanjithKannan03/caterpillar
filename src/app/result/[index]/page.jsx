@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { faker } from '@faker-js/faker';
 import { predictionStore } from '../../../../zustand/store';
 
 const page = ({ params }) => {
@@ -19,12 +18,12 @@ const page = ({ params }) => {
                 <div className='flex items-center gap-8'>
                     <span className='text-2xl font-medium text-white'>Probabilty of Failure:</span>
                     {/* <span className='p-2 text-4xl font-semibold text-green-500 border-2 border-green-500 border-solid'>Pass</span> */}
-                    <span className='text-4xl font-semibold text-red-500 '>{prediction[index]["Probability of Failure"]}</span>
+                    <span className={`text-4xl font-semibold ${prediction[index].target === "Will Fail" ? "text-red-500" : "text-green-500"} `}>{prediction[index]["Probability of Failure"]}</span>
                 </div>
                 <div className='flex items-center gap-8'>
                     <span className='text-2xl font-medium text-white'>Status:</span>
                     {/* <span className='p-2 text-4xl font-semibold text-green-500 border-2 border-green-500 border-solid'>Pass</span> */}
-                    <span className='px-4 py-2 text-4xl font-semibold text-red-500 border-2 border-red-500 border-solid'>{prediction[index].target}</span>
+                    <span className={`px-4 py-2 text-4xl font-semibold ${prediction[index].target === "Will Fail" ? "text-red-500 border-2 border-red-500" : "text-green-500 border-2 border-green-500"} border-solid`}>{prediction[index].target}</span>
                 </div>
             </div>
 

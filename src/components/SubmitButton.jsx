@@ -14,7 +14,7 @@ const SubmitButton = () => {
     return (
         <button className="p-2 bg-[#E269D7] rounded-xl text-white" onClick={(e) => {
             e.preventDefault();
-            router.push('/result')
+            router.push('/result');
         }}>Submit</button>
     )
 }
