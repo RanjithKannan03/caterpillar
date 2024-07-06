@@ -22,7 +22,7 @@ const List = ({ results }) => {
                                 router.push(`/result/${index}`)
                             }}>
                                 <span className='text-sm font-medium'>{value.Machine}</span>
-                                <span className='text-[0.6rem] font-light'>{new Date(value.Time).toLocaleString()}</span>
+                                <span className='text-[0.6rem] font-light'>{value.Time}</span>
                             </div>
                         )
                     })

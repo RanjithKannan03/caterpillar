@@ -4,9 +4,16 @@ import List from './List';
 
 const ItemsList = async () => {
 
-    const response = await axios.get('http://127.0.0.1:5000');
-    console.log("hi");
-    const predictions = response.data;
+    const response = await fetch("http://127.0.0.1:5000", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            // Add any other headers your API requires
+        }
+    });
+    const predictions = await response.json();
+    console.log(predictions);
+
 
     // useEffect(() => {
     //     async function getData() {
